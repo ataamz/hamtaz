@@ -197,6 +197,7 @@ function buildModalHtml(title, price, showPrice = true, forceTabs = false, code 
   const months = details.months;
   const factor = details.factor;
   const installmentRounded = details.rounded;
+  const installmentExact = details.raw;
 
   const creditPrice = Math.ceil(price / CONSTANTS.CREDIT_ROUNDING) * CONSTANTS.CREDIT_ROUNDING;
   const creditRow = `<div class="flex justify-between border-b py-2"><div class="text-sm text-gray-600">میزان اعتبار</div><div class="font-medium text-gray-800">${fmtNumber(creditPrice,0)} ریال</div></div>`;
@@ -242,7 +243,7 @@ function buildModalHtml(title, price, showPrice = true, forceTabs = false, code 
 
   const mainRows = `
     <div class="flex justify-between border-b py-2"><div class="text-sm text-gray-600">تعداد اقساط</div><div class="font-medium text-gray-800">${months} ماه</div></div>
-    <div class="flex justify-between border-b py-2"><div class="text-sm text-gray-600">مبلغ هر قسط</div><div class="font-medium text-gray-800">${fmtNumber(installmentRounded,0)} ریال</div></div>
+    <div class="flex justify-between border-b py-2"><div class="text-sm text-gray-600">مبلغ هر قسط</div><div class="font-medium text-gray-800">${fmtNumber(installmentExact,0)} ریال</div></div>
   ${creditRow}
   ${sideRow}
   ${cashPriceRow}
@@ -680,5 +681,6 @@ document.addEventListener('keydown', (event) => {
         }
     }
 });
+
 
 
