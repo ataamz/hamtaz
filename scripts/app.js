@@ -180,8 +180,7 @@ function fmtNumber(n, decimals=0){
 }
 
 function roundUpToMillion(n){
-  if(!isFinite(n) || n <= 0) return 0;
-  return Math.ceil(n / 1000000) * 1000000;
+  return n;
 }
 
 function getInstallmentDetails(price){
