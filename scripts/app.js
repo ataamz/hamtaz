@@ -301,7 +301,7 @@ function buildModalHtml(title, price, showPrice = true, forceTabs = false, code 
 
   let extraRows = '';
   if(price <= CONSTANTS.PRICE_THRESHOLD){
-    const v36 = roundUpToMillion(price * CONSTANTS.INSTALLMENT_FACTORS.HIGH);
+    const v36 = price * CONSTANTS.INSTALLMENT_FACTORS.HIGH;
     extraRows = `<div class="flex justify-between py-2"><div class="text-base font-semibold text-sm text-gray-600">اقساط 36 ماهه</div><div class="text-base font-semibold text-gray-800 ">${fmtNumber(v36,0)} ریال</div></div>`;
   }
 
@@ -680,4 +680,5 @@ document.addEventListener('keydown', (event) => {
         }
     }
 });
+
 
