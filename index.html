@@ -163,13 +163,18 @@
 </style>
   <script src="scripts/app.js"></script>
   <script>
-  $('.container-rating').hide();
-  $('#rating').click(function(){
-  $('.container-rating').show();
-  });
-  $('#closeModal2').click(function(){
-  $('.container-rating').hide();
-  });
+  // مخفی کردن المان در ابتدا
+document.querySelector('.container-rating').style.display = 'none';
+
+// نمایش با کلیک روی rating#
+document.querySelector('#rating').addEventListener('click', function() {
+    document.querySelector('.container-rating').style.display = 'block';
+});
+
+// مخفی کردن با کلیک روی closeModal2#
+document.querySelector('#closeModal2').addEventListener('click', function() {
+    document.querySelector('.container-rating').style.display = 'none';
+});
   
   document.getElementById('creditRating').addEventListener('change', calculateLoan);
         document.getElementById('loanAmount').addEventListener('input', calculateLoan);
@@ -276,3 +281,4 @@ loanInput.addEventListener("input", function () {
 </body>
 
 </html>
+
