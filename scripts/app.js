@@ -33,7 +33,7 @@ const CONSTANTS = {
     BLOCK: 0.06061125,
     CONTRACT: 0.005158875
   },
-  CONTRACT_ADDON: 2000000,
+  CONTRACT_ADDON: 10000000,
   CREDIT_ROUNDING: 100000000,
   
   // ضرایب حالت عادی
@@ -344,6 +344,7 @@ function buildModalHtml(title, price, showPrice = true, forceTabs = false, code 
   const sideRaw = (creditPrice / 1000000000) * 75000000;
   const sideWithAdd = sideRaw + CONSTANTS.CONTRACT_ADDON;
   const sideRounded = roundUpToMillion(sideWithAdd);
+  
   const sideRow = `<div class="flex justify-between border-b py-2"><div class="text-sm text-gray-600">بلوکه + قرارداد</div><div class="font-medium text-gray-800">${fmtNumber(sideRounded,0)} ریال</div></div>`;
 
   let cashPriceRow = '';
