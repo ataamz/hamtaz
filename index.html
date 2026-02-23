@@ -4,7 +4,6 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>لیست قیمت محصولات</title>
-  <script src="scripts/jquery-4.0.0.min.js"></script>
   <script src="scripts/tailwindcss.js"></script>
   <style>
     @font-face {
@@ -14,7 +13,6 @@
 
     body { background: #eef2f7; font-family: 'Vazirmatn', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; }
     .glass { background: #ffffff; box-shadow: 0 6px 18px rgba(15,23,42,0.06); }
-	  #tabWelfare {display:none;}
     
     @media (max-width: 640px) {
       #modal {
@@ -24,7 +22,7 @@
         margin-top: 5vh !important;
       }
       #rating-modal > div {
-        margin-top: -150px !important;
+        margin-top: -5vh !important;
       }
     }
 
@@ -348,7 +346,7 @@
       if (creditRating === 'AB') {
         if (loanAmount <= 2000000000) {
           allConditions.push({
-            period: '۲۴ ماهه',
+            period: '24 ماهه',
             guarantor: 'یک فقره چک صیادی یا سفته الکترونیکی (بدون ضامن)',
             loanAmount: loanAmount,
             installment: loanAmount * INSTALLMENT_RATE_24,
@@ -356,7 +354,7 @@
           });
           
           allConditions.push({
-            period: '۳۰ ماهه',
+            period: '30 ماهه',
             guarantor: 'یک فقره چک صیادی + یک ضامن',
             loanAmount: FIXED_AMOUNT_30,
             installment: loanAmount * INSTALLMENT_RATE_30,
@@ -364,7 +362,7 @@
           });
           
           allConditions.push({
-            period: '۳۶ ماهه',
+            period: '36 ماهه',
             guarantor: 'یک فقره چک صیادی + یک ضامن',
             loanAmount: FIXED_AMOUNT_36,
             installment: loanAmount * INSTALLMENT_RATE_36,
@@ -374,7 +372,7 @@
         // ... بقیه شرط‌ها (مشابه کد قبلی)
         else if (loanAmount >= 2100000000 && loanAmount <= 5000000000) {
           allConditions.push({
-            period: '۲۴ ماهه',
+            period: '24 ماهه',
             guarantor: 'یک فقره چک صیادی(بدون ضامن) یا سفته الکترونیکی + یک ضامن',
             loanAmount: loanAmount,
             installment: loanAmount * INSTALLMENT_RATE_24,
@@ -382,7 +380,7 @@
           });
           
           allConditions.push({
-            period: '۳۰ ماهه',
+            period: '30 ماهه',
             guarantor: 'یک فقره چک صیادی (بدون ضامن) یا سفته الکترونیکی + یک ضامن',
             loanAmount: FIXED_AMOUNT_30,
             installment: loanAmount * INSTALLMENT_RATE_30,
@@ -390,7 +388,7 @@
           });
           
           allConditions.push({
-            period: '۳۶ ماهه',
+            period: '36 ماهه',
             guarantor: 'یک فقره چک صیادی + یک ضامن',
             loanAmount: FIXED_AMOUNT_36,
             installment: loanAmount * INSTALLMENT_RATE_36,
@@ -399,7 +397,7 @@
         }
         else if (loanAmount >= 5100000000 && loanAmount <= 7500000000) {
           allConditions.push({
-            period: '۳۰ ماهه',
+            period: '30 ماهه',
             guarantor: 'یک فقره چک صیادی + یک ضامن',
             loanAmount: loanAmount,
             installment: loanAmount * INSTALLMENT_RATE_30,
@@ -407,7 +405,7 @@
           });
           
           allConditions.push({
-            period: '۳۶ ماهه',
+            period: '36 ماهه',
             guarantor: 'یک فقره چک صیادی + یک ضامن',
             loanAmount: FIXED_AMOUNT_36,
             installment: loanAmount * INSTALLMENT_RATE_36,
@@ -416,7 +414,7 @@
         }
         else if (loanAmount > 7500000000) {
           allConditions.push({
-            period: '۳۶ ماهه',
+            period: '36 ماهه',
             guarantor: 'یک فقره چک صیادی + یک ضامن',
             loanAmount: loanAmount,
             installment: loanAmount * INSTALLMENT_RATE_36,
@@ -427,7 +425,7 @@
       else if (creditRating === 'CD') {
         if (loanAmount <= 2000000000) {
           allConditions.push({
-            period: '۲۴ ماهه',
+            period: '24 ماهه',
             guarantor: 'یک فقره چک صیادی یا سفته الکترونیکی + یک ضامن',
             loanAmount: loanAmount,
             installment: loanAmount * INSTALLMENT_RATE_24,
@@ -435,7 +433,7 @@
           });
           
           allConditions.push({
-            period: '۳۰ ماهه',
+            period: '30 ماهه',
             guarantor: 'یک فقره چک صیادی + دو ضامن',
             loanAmount: FIXED_AMOUNT_30,
             installment: loanAmount * INSTALLMENT_RATE_30,
@@ -443,7 +441,7 @@
           });
           
           allConditions.push({
-            period: '۳۶ ماهه',
+            period: '36 ماهه',
             guarantor: 'یک فقره چک صیادی + دو ضامن',
             loanAmount: FIXED_AMOUNT_36,
             installment: loanAmount * INSTALLMENT_RATE_36,
@@ -452,7 +450,7 @@
         }
         else if (loanAmount >= 2100000000 && loanAmount <= 5000000000) {
           allConditions.push({
-            period: '۲۴ ماهه',
+            period: '24 ماهه',
             guarantor: 'یک فقره چک صیادی + یک ضامن',
             loanAmount: loanAmount,
             installment: loanAmount * INSTALLMENT_RATE_24,
@@ -460,7 +458,7 @@
           });
           
           allConditions.push({
-            period: '۳۰ ماهه',
+            period: '30 ماهه',
             guarantor: 'یک فقره چک صیادی + دو ضامن',
             loanAmount: FIXED_AMOUNT_30,
             installment: loanAmount * INSTALLMENT_RATE_30,
@@ -468,7 +466,7 @@
           });
           
           allConditions.push({
-            period: '۳۶ ماهه',
+            period: '36 ماهه',
             guarantor: 'یک فقره چک صیادی + دو ضامن',
             loanAmount: FIXED_AMOUNT_36,
             installment: loanAmount * INSTALLMENT_RATE_36,
@@ -477,7 +475,7 @@
         }
         else if (loanAmount >= 5100000000 && loanAmount <= 7500000000) {
           allConditions.push({
-            period: '۳۰ ماهه',
+            period: '30 ماهه',
             guarantor: 'یک فقره چک صیادی + دو ضامن',
             loanAmount: loanAmount,
             installment: loanAmount * INSTALLMENT_RATE_30,
@@ -485,7 +483,7 @@
           });
           
           allConditions.push({
-            period: '۳۶ ماهه',
+            period: '36 ماهه',
             guarantor: 'یک فقره چک صیادی + دو ضامن',
             loanAmount: FIXED_AMOUNT_36,
             installment: loanAmount * INSTALLMENT_RATE_36,
@@ -494,7 +492,7 @@
         }
         else if (loanAmount > 7500000000) {
           allConditions.push({
-            period: '۳۶ ماهه',
+            period: '36 ماهه',
             guarantor: 'یک فقره چک صیادی + دو ضامن',
             loanAmount: loanAmount,
             installment: loanAmount * INSTALLMENT_RATE_36,
@@ -522,9 +520,9 @@
           tabPanel.className = `tab-panel ${index === 0 ? 'active' : ''}`;
           tabPanel.id = `tab-${index}`;
           
-          const formattedLoanAmount = condition.loanAmount.toLocaleString('fa-IR');
-          const formattedInstallment = Math.ceil(condition.installment).toLocaleString('fa-IR');
-          const formattedDeposit = Math.ceil(condition.deposit).toLocaleString('fa-IR');
+          const formattedLoanAmount = condition.loanAmount.toLocaleString('en-US');
+          const formattedInstallment = Math.ceil(condition.installment).toLocaleString('en-US');
+          const formattedDeposit = Math.ceil(condition.deposit).toLocaleString('en-US');
           
           tabPanel.innerHTML = `
             <div class="loan-detail">
@@ -559,5 +557,3 @@
   </script>
 </body>
 </html>
-
-
