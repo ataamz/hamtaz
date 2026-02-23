@@ -409,7 +409,7 @@
             guarantor: 'یک فقره چک صیادی + یک ضامن',
             loanAmount: FIXED_AMOUNT_36,
             installment: loanAmount * INSTALLMENT_RATE_36,
-            deposit: roundUpToNearestTenMillion((loanAmount / 1000000000) * 75000000 + ADDPRICE)
+            deposit: roundUpToNearestTenMillion((FIXED_AMOUNT_36 / 1000000000) * 75000000 + ADDPRICE)
           });
         }
         else if (loanAmount > 7500000000) {
@@ -487,7 +487,7 @@
             guarantor: 'یک فقره چک صیادی + دو ضامن',
             loanAmount: FIXED_AMOUNT_36,
             installment: loanAmount * INSTALLMENT_RATE_36,
-            deposit: roundUpToNearestTenMillion((loanAmount / 1000000000) * 75000000 + ADDPRICE)
+            deposit: roundUpToNearestTenMillion((FIXED_AMOUNT_36 / 1000000000) * 75000000 + ADDPRICE)
           });
         }
         else if (loanAmount > 7500000000) {
@@ -557,4 +557,5 @@
   </script>
 </body>
 </html>
+
 
